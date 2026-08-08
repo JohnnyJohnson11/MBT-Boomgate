@@ -1,0 +1,77 @@
+{
+    "models": [
+        {
+            "name": "AdminCRUD",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_adminPage", "name": "v_adminPage", "properties": { "x": 100, "y": 500 } },
+                { "id": "v_dashboardAdmin", "name": "v_dashboardAdmin", "properties": { "x": 100, "y": 500 } },
+                { "id": "v_createAdminDialog", "name": "v_createAdminDialog", "properties": { "x": -100, "y": 700 } },
+                { "id": "v_editAdminDialog", "name": "v_editAdminDialog", "properties": { "x": 300, "y": 700 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_loginAdmin",
+                    "actions": [
+                        "editChances = 2;",
+                        "deleteChances = 2;",
+                        "createChances = 2;"
+                    ],
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_dashboardAdmin"
+                },
+                {
+                    "id": "e2",
+                    "name": "e_openCreateAdminDialog",
+                    "actions": [
+                        "createChances--"
+                    ],
+                    "guard": "createChances>0",
+                    "sourceVertexId": "v_adminPage",
+                    "targetVertexId": "v_createAdminDialog"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_createAdmin",
+                    "sourceVertexId": "v_createAdminDialog",
+                    "targetVertexId": "v_adminPage"
+                },
+                {
+                    "id": "e4",
+                    "name": "e_openEditAdminDialog",
+                    "actions": [
+                        "editChances--"
+                    ],
+                    "guard": "editChances>0",
+                    "sourceVertexId": "v_adminPage",
+                    "targetVertexId": "v_editAdminDialog"
+                },
+                {
+                    "id": "e5",
+                    "name": "e_editAdmin",
+                    "sourceVertexId": "v_editAdminDialog",
+                    "targetVertexId": "v_adminPage"
+                },
+                {
+                    "id": "e6",
+                    "name": "e_deleteAdmin",
+                    "actions": [
+                        "deleteChances--"
+                    ],
+                    "guard": "deleteChances>0",
+                    "sourceVertexId": "v_adminPage",
+                    "targetVertexId": "v_adminPage"
+                },
+                {
+                    "id": "e7",
+                    "name": "e_openAdminPage",
+                    "sourceVertexId": "v_dashboardAdmin",
+                    "targetVertexId": "v_adminPage"
+                }
+            ]
+        }
+    ]
+}

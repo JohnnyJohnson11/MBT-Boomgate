@@ -1,0 +1,6 @@
+com\boomgate\test\BoomgateTest.class
+com\boomgate\test\BoomgateModel.class
+com\boomgate\test\LoginTest.class
+com\boomgate\test\MainRunner.class
+com\boomgate\test\LoginTestEFSM.class
+com\boomgate\App.class

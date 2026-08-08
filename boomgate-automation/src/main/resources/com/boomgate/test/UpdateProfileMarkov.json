@@ -1,0 +1,72 @@
+{
+    "models": [
+        {
+            "name": "UpdateProfileModel",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 600, "y": 100 } }, 
+                { "id": "v_editProfilePageAdmin", "name": "v_editProfilePageAdmin", "properties": { "x": 400, "y": 706 } },
+                { "id": "v_editProfilePageSatpam", "name": "v_editProfilePageSatpam", "properties": { "x": 400, "y": 706 } },
+                { "id": "v_adminDashboard", "name": "v_adminDashboard", "properties": { "x": 400, "y": 706 } },
+                { "id": "v_satpamDashboard", "name": "v_satpamDashboard", "properties": { "x": 400, "y": 706 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_loginSatpam",
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_satpamDashboard",
+                    "weight": "0.6"
+                },
+                {
+                    "id": "e2",
+                    "name": "e_loginAdmin",
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_adminDashboard",
+                    "weight": "0.4"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_editProfileAdmin",
+                    "sourceVertexId": "v_editProfilePageAdmin",
+                    "targetVertexId": "v_editProfilePageAdmin",
+                    "weight": "0.8"
+                },
+                {
+                    "id": "e4",
+                    "name": "e_editProfileSatpam",
+                    "sourceVertexId": "v_editProfilePageSatpam",
+                    "targetVertexId": "v_editProfilePageSatpam",
+                    "weight": "0.8"
+                },
+                {
+                    "id": "e5",
+                    "name": "e_openEditProfileAdmin",
+                    "sourceVertexId": "v_adminDashboard",
+                    "targetVertexId": "v_editProfilePageAdmin"
+                },
+                {
+                    "id": "e6",
+                    "name": "e_openEditProfileSatpam",
+                    "sourceVertexId": "v_satpamDashboard",
+                    "targetVertexId": "v_editProfilePageSatpam"
+                },
+                {
+                    "id": "e7",
+                    "name": "e_logOutAdmin",
+                    "sourceVertexId": "v_editProfilePageAdmin",
+                    "targetVertexId": "v_loginPage",
+                    "weight": "0.2"
+                },
+                {
+                    "id": "e8",
+                    "name": "e_logOutSatpam",
+                    "sourceVertexId": "v_editProfilePageSatpam",
+                    "targetVertexId": "v_loginPage",
+                    "weight": "0.2"
+                }
+            ]
+        }
+    ]
+}

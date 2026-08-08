@@ -1,0 +1,99 @@
+{
+  "models": [
+    {
+      "name": "BoomgateModel",
+      "id": "m1",
+      "startElementId": "v_networkInit",
+      "vertices": [
+        { "id": "v_networkInit", "name": "v_networkInit", "properties": { "x": 100, "y": 300 } },
+        { "id": "v_rfidInit", "name": "v_rfidInit", "properties": { "x": 350, "y": 300 } },
+        { "id": "v_idle", "name": "v_idle", "properties": { "x": 600, "y": 300 } },
+        { "id": "v_authPending", "name": "v_authPending", "properties": { "x": 850, "y": 300 } },
+        { "id": "v_sendingRfidAPI", "name": "v_sendingRfidAPI", "properties": { "x": 1100, "y": 300 } },
+        { "id": "v_authDecision", "name": "v_authDecision", "properties": { "x": 1100, "y": 500 } },
+        { "id": "v_authSuccess", "name": "v_authSuccess", "properties": { "x": 600, "y": 500 } }
+      ],
+      "edges": [
+        {
+          "id": "e1",
+          "name": "e_dhcpSuccess",
+          "sourceVertexId": "v_networkInit",
+          "targetVertexId": "v_rfidInit"
+        },
+        {
+          "id": "e2",
+          "name": "e_rfidSuccess",
+          "sourceVertexId": "v_rfidInit",
+          "targetVertexId": "v_idle"
+        },
+        {
+          "id": "e3",
+          "name": "e_noCardDetected",
+          "sourceVertexId": "v_idle",
+          "targetVertexId": "v_idle"
+        },
+        {
+          "id": "e4",
+          "name": "e_cardAndVehicleValid",
+          "sourceVertexId": "v_idle",
+          "targetVertexId": "v_authPending"
+        },
+        {
+          "id": "e5",
+          "name": "e_return_noLink",
+          "sourceVertexId": "v_authPending",
+          "targetVertexId": "v_idle"
+        },
+        {
+          "id": "e6",
+          "name": "e_postApi",
+          "sourceVertexId": "v_authPending",
+          "targetVertexId": "v_sendingRfidAPI"
+        },
+        {
+          "id": "e7",
+          "name": "e_apiPostFail",
+          "sourceVertexId": "v_sendingRfidAPI",
+          "targetVertexId": "v_sendingRfidAPI"
+        },
+        {
+          "id": "e8",
+          "name": "e_apiMaxRetryReached",
+          "sourceVertexId": "v_sendingRfidAPI",
+          "targetVertexId": "v_authDecision"
+        },
+        {
+          "id": "e9",
+          "name": "e_apiResponseReceived",
+          "sourceVertexId": "v_sendingRfidAPI",
+          "targetVertexId": "v_authDecision"
+        },
+        {
+          "id": "e10",
+          "name": "e_accessGranted",
+          "sourceVertexId": "v_authDecision",
+          "targetVertexId": "v_authSuccess"
+        },
+        {
+          "id": "e11",
+          "name": "e_accessDenied",
+          "sourceVertexId": "v_authDecision",
+          "targetVertexId": "v_idle"
+        },
+        {
+          "id": "e12",
+          "name": "e_vehiclePassed",
+          "sourceVertexId": "v_authSuccess",
+          "targetVertexId": "v_idle"
+        },
+        {
+          "id": "e13",
+          "name": "e_gateTimeout",
+          "sourceVertexId": "v_authSuccess",
+          "targetVertexId": "v_idle"
+        }
+        
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+    "models": [
+        {
+            "name": "SatpamCRUD",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_dashboard", "name": "v_dashboard", "properties": { "x": 100, "y": 100 } },
+                { "id": "v_satpamPage", "name": "v_satpamPage", "properties": { "x": 100, "y": 500 } },
+                { "id": "v_createSatpamDialog", "name": "v_createSatpamDialog", "properties": { "x": -100, "y": 700 } },
+                { "id": "v_editSatpamDialog", "name": "v_editSatpamDialog", "properties": { "x": 300, "y": 700 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_loginAdmin",
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_dashboard"
+
+                },
+                {
+                    "id": "e2",
+                    "name": "e_openSatpamPage",
+                    "sourceVertexId": "v_dashboard",
+                    "targetVertexId": "v_satpamPage"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_openCreateSatpamDialog",
+                    "sourceVertexId": "v_satpamPage",
+                    "targetVertexId": "v_createSatpamDialog"
+                },
+                {
+                    "id": "e4",
+                    "name": "e_createSatpam",
+                    "sourceVertexId": "v_createSatpamDialog",
+                    "targetVertexId": "v_satpamPage"
+                },
+                {
+                    "id": "e5",
+                    "name": "e_openEditSatpamDialog",
+                    "sourceVertexId": "v_satpamPage",
+                    "targetVertexId": "v_editSatpamDialog"
+                },
+                {
+                    "id": "e6",
+                    "name": "e_editSatpam",
+                    "sourceVertexId": "v_editSatpamDialog",
+                    "targetVertexId": "v_satpamPage"
+                },
+                {
+                    "id": "e7",
+                    "name": "e_deleteSatpam",
+                    "sourceVertexId": "v_satpamPage",
+                    "targetVertexId": "v_satpamPage"
+                }     
+            ]
+        }
+    ]
+}

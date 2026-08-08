@@ -1,0 +1,21 @@
+{
+    "models": [
+        {
+            "name": "v_Admin Dashboard Verification",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 600, "y": 100 } },
+                { "id": "v_adminDashboard", "name": "v_adminDashboard", "properties": { "x": 600, "y": 100 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_loginAdmin",
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_adminDashboard"
+                }     
+            ]
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "models": [
+        {
+            "name": "UpdateProfileModel",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 600, "y": 100 } }, 
+                { "id": "v_editProfilePageAdmin", "name": "v_editProfilePageAdmin", "properties": { "x": 400, "y": 706 } },
+                { "id": "v_editProfilePageSatpam", "name": "v_editProfilePageSatpam", "properties": { "x": 400, "y": 706 } },
+                { "id": "v_dashboard", "name": "v_dashboard", "properties": { "x": 400, "y": 706 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_loginSatpam",
+                    "actions": [
+                        "current_role = 'satpam'"
+                    ],
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_dashboard"
+                },
+                {
+                    "id": "e2",
+                    "name": "e_loginAdmin",
+                    "actions": [
+                        "current_role = 'admin'"
+                    ],
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_dashboard"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_editProfileAdmin",
+                    "sourceVertexId": "v_editProfilePageAdmin",
+                    "targetVertexId": "v_editProfilePageAdmin"
+                },
+                {
+                    "id": "e4",
+                    "name": "e_editProfileSatpam",
+                    "sourceVertexId": "v_editProfilePageSatpam",
+                    "targetVertexId": "v_editProfilePageSatpam"
+                },
+                {
+                    "id": "e5",
+                    "name": "e_openEditProfileAdmin",
+                    "guard": "current_role == 'admin' ", 
+                    "sourceVertexId": "v_dashboard",
+                    "targetVertexId": "v_editProfilePageAdmin"
+                },
+                {
+                    "id": "e6",
+                    "name": "e_openEditProfileSatpam",
+                    "guard": "current_role == 'satpam' ", 
+                    "sourceVertexId": "v_dashboard",
+                    "targetVertexId": "v_editProfilePageSatpam"
+                },
+                {
+                    "id": "e7",
+                    "name": "e_logOutAdmin",
+                    "sourceVertexId": "v_editProfilePageAdmin",
+                    "targetVertexId": "v_loginPage"
+                },
+                {
+                    "id": "e8",
+                    "name": "e_logOutSatpam",
+                    "sourceVertexId": "v_editProfilePageSatpam",
+                    "targetVertexId": "v_loginPage"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,118 @@
+{
+    "models": [
+        {
+            "name": "TamuCRUD",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_adminDashboard", "name": "v_adminDashboard", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_satpamDashboard", "name": "v_satpamDashboard", "properties": { "x": 500, "y": 100 } }, 
+                { "id": "v_tamuPageAdmin", "name": "v_tamuPageAdmin", "properties": { "x": 100, "y": 500 } },
+                { "id": "v_tamuPageSatpam", "name": "v_tamuPageSatpam", "properties": { "x": 500, "y": 500 } },
+                { "id": "v_createTamuDialogAdmin", "name": "v_createTamuDialogAdmin", "properties": { "x": -100, "y": 700 } },
+                { "id": "v_editTamuDialogAdmin", "name": "v_editTamuDialogAdmin", "properties": { "x": 300, "y": 700 } },
+                { "id": "v_createTamuDialogSatpam", "name": "v_createTamuDialogSatpam", "properties": { "x": -100, "y": 700 } },
+                { "id": "v_editTamuDialogSatpam", "name": "v_editTamuDialogSatpam", "properties": { "x": 300, "y": 700 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_openTamuPageAdmin",
+                    "sourceVertexId": "v_adminDashboard",
+                    "targetVertexId": "v_tamuPageAdmin"
+                },
+                {
+                    "id": "e2",
+                    "name": "e_openTamuPageSatpam",
+                    "sourceVertexId": "v_satpamDashboard",
+                    "targetVertexId": "v_tamuPageSatpam"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_loginAdmin",
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_adminDashboard"
+                },
+                {
+                    "id": "e4",
+                    "name": "e_loginSatpam",
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_satpamDashboard"
+                },
+                {
+                    "id": "e5",
+                    "name": "e_openCreateDialogAdmin",
+                    "sourceVertexId": "v_tamuPageAdmin",
+                    "targetVertexId": "v_createTamuDialogAdmin"
+                },
+                {
+                    "id": "e6",
+                    "name": "e_createTamuAdmin",
+                    "sourceVertexId": "v_createTamuDialogAdmin",
+                    "targetVertexId": "v_tamuPageAdmin"
+                },   
+                {
+                    "id": "e7",
+                    "name": "e_openEditDialogAdmin",
+                    "sourceVertexId": "v_tamuPageAdmin",
+                    "targetVertexId": "v_editTamuDialogAdmin"
+                },
+                {
+                    "id": "e8",
+                    "name": "e_editTamuAdmin",
+                    "sourceVertexId": "v_editTamuDialogAdmin",
+                    "targetVertexId": "v_tamuPageAdmin"
+                },
+                {
+                    "id": "e9",
+                    "name": "e_deleteTamuAdmin",
+                    "sourceVertexId": "v_tamuPageAdmin",
+                    "targetVertexId": "v_tamuPageAdmin"
+                },
+                {
+                    "id": "e10",
+                    "name": "e_openCreateDialogSatpam",
+                    "sourceVertexId": "v_tamuPageSatpam",
+                    "targetVertexId": "v_createTamuDialogSatpam"
+                },
+                {
+                    "id": "e11",
+                    "name": "e_createTamuSatpam",
+                    "sourceVertexId": "v_createTamuDialogSatpam",
+                    "targetVertexId": "v_tamuPageSatpam"
+                },   
+                {
+                    "id": "e12",
+                    "name": "e_openEditDialogSatpam",
+                    "sourceVertexId": "v_tamuPageSatpam",
+                    "targetVertexId": "v_editTamuDialogSatpam"
+                },
+                {
+                    "id": "e13",
+                    "name": "e_editTamuSatpam",
+                    "sourceVertexId": "v_editTamuDialogSatpam",
+                    "targetVertexId": "v_tamuPageSatpam"
+                },
+                {
+                    "id": "e14",
+                    "name": "e_deleteTamuSatpam",
+                    "sourceVertexId": "v_tamuPageSatpam",
+                    "targetVertexId": "v_tamuPageSatpam"
+                },
+                {
+                    "id": "e15",
+                    "name": "e_logoutAdmin",
+                    "sourceVertexId": "v_tamuPageAdmin",
+                    "targetVertexId": "v_loginPage"
+                },
+                {
+                    "id": "e16",
+                    "name": "e_logoutSatpam",
+                    "sourceVertexId": "v_tamuPageSatpam",
+                    "targetVertexId": "v_loginPage"
+                }
+            ]
+        }
+    ]
+}

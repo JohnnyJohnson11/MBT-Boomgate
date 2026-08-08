@@ -1,0 +1,40 @@
+{
+    "models": [
+        {
+            "name": "Vehicle Activity",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 600, "y": 100 } },
+                { "id": "v_adminDashboard", "name": "v_adminDashboard", "properties": { "x": 600, "y": 100 } },
+                { "id": "v_aktivitasKendaraan", "name": "v_aktivitasKendaraan", "properties": { "x": 600, "y": 100 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_loginAdmin",
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_adminDashboard"
+                },
+                {
+                    "id": "e2",
+                    "name": "e_toAktivitasKendaraan",
+                    "sourceVertexId": "v_adminDashboard",
+                    "targetVertexId": "v_aktivitasKendaraan"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_checkVehicleInside",
+                    "sourceVertexId": "v_aktivitasKendaraan",
+                    "targetVertexId": "v_aktivitasKendaraan"
+                },
+                {
+                    "id": "e4",
+                    "name": "e_checkVehicleOutside",
+                    "sourceVertexId": "v_aktivitasKendaraan",
+                    "targetVertexId": "v_aktivitasKendaraan"
+                }
+            ]
+        }
+    ]
+}

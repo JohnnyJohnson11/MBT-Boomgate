@@ -1,0 +1,86 @@
+{
+    "models": [
+        {
+            "name": "WargaCRUD",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_adminDashboard", "name": "v_adminDashboard", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_satpamDashboard", "name": "v_satpamDashboard", "properties": { "x": 500, "y": 100 } }, 
+                { "id": "v_wargaPageAdmin", "name": "v_wargaPageAdmin", "properties": { "x": 100, "y": 500 } },
+                { "id": "v_wargaPageSatpam", "name": "v_wargaPageSatpam", "properties": { "x": 500, "y": 500 } },
+                { "id": "v_createWargaDialog", "name": "v_createWargaDialog", "properties": { "x": -100, "y": 700 } },
+                { "id": "v_editWargaDialog", "name": "v_editWargaDialog", "properties": { "x": 300, "y": 700 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_openWargaPageAdmin",
+                    "sourceVertexId": "v_adminDashboard",
+                    "targetVertexId": "v_wargaPageAdmin"
+                },
+                {
+                    "id": "e2",
+                    "name": "e_openWargaPageSatpam",
+                    "sourceVertexId": "v_satpamDashboard",
+                    "targetVertexId": "v_wargaPageSatpam"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_loginAdmin",
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_adminDashboard"
+                },
+                {
+                    "id": "e4",
+                    "name": "e_loginSatpam",
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_satpamDashboard"
+                },
+                {
+                    "id": "e5",
+                    "name": "e_openCreateWargaDialog",
+                    "sourceVertexId": "v_wargaPageAdmin",
+                    "targetVertexId": "v_createWargaDialog"
+                },
+                {
+                    "id": "e6",
+                    "name": "e_createWarga",
+                    "sourceVertexId": "v_createWargaDialog",
+                    "targetVertexId": "v_wargaPageAdmin"
+                },   
+                {
+                    "id": "e7",
+                    "name": "e_openEditWargaDialog",
+                    "sourceVertexId": "v_wargaPageAdmin",
+                    "targetVertexId": "v_editWargaDialog"
+                },
+                {
+                    "id": "e8",
+                    "name": "e_editWarga",
+                    "sourceVertexId": "v_editWargaDialog",
+                    "targetVertexId": "v_wargaPageAdmin"
+                },
+                {
+                    "id": "e9",
+                    "name": "e_deleteWarga",
+                    "sourceVertexId": "v_wargaPageAdmin",
+                    "targetVertexId": "v_wargaPageAdmin"
+                },
+                {
+                    "id": "e10",
+                    "name": "e_logoutAdmin",
+                    "sourceVertexId": "v_wargaPageAdmin",
+                    "targetVertexId": "v_loginPage"
+                },
+                {
+                    "id": "e11",
+                    "name": "e_logoutSatpam",
+                    "sourceVertexId": "v_wargaPageSatpam",
+                    "targetVertexId": "v_loginPage"
+                }
+            ]
+        }
+    ]
+}

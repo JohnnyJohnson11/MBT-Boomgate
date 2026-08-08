@@ -1,0 +1,61 @@
+{
+    "models": [
+        {
+            "name": "SatpamCRUD",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_dashboard", "name": "v_dashboard", "properties": { "x": 100, "y": 100 } },
+                { "id": "v_masterGatePage", "name": "v_masterGatePage", "properties": { "x": 100, "y": 500 } },
+                { "id": "v_createGateDialog", "name": "v_createGateDialog", "properties": { "x": -100, "y": 700 } },
+                { "id": "v_editGateDialog", "name": "v_editGateDialog", "properties": { "x": 300, "y": 700 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_loginAdmin",
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_dashboard"
+
+                },
+                {
+                    "id": "e2",
+                    "name": "e_openGatePage",
+                    "sourceVertexId": "v_dashboard",
+                    "targetVertexId": "v_masterGatePage"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_openCreateGateDialog",
+                    "sourceVertexId": "v_MasterGatePage",
+                    "targetVertexId": "v_createGateDialog"
+                },
+                {
+                    "id": "e4",
+                    "name": "e_createGate",
+                    "sourceVertexId": "v_createGateDialog",
+                    "targetVertexId": "v_masterGatePage"
+                },
+                {
+                    "id": "e5",
+                    "name": "e_openEditGateDialog",
+                    "sourceVertexId": "v_gatePage",
+                    "targetVertexId": "v_editGateDialog"
+                },
+                {
+                    "id": "e6",
+                    "name": "e_editGate",
+                    "sourceVertexId": "v_editGateDialog",
+                    "targetVertexId": "v_masterGatePage"
+                },
+                {
+                    "id": "e7",
+                    "name": "e_deleteGate",
+                    "sourceVertexId": "v_masterGatePage",
+                    "targetVertexId": "v_masterGatePage"
+                }     
+            ]
+        }
+    ]
+}

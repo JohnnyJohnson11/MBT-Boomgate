@@ -1,0 +1,45 @@
+{
+    "models": [
+        {
+            "name": "LoginModel",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 400, "y": 100 } }, 
+                { "id": "v_dashboard", "name": "v_dashboard", "properties": { "x": 400, "y": 400 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_loginSatpam",
+                    "actions": [
+                        "current_role='satpam';"
+                    ],
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_dashboard"
+                },
+                {
+                    "id": "e2",
+                    "name": "e_loginAdmin",
+                    "actions": [
+                        "current_role='admin';"
+                    ],
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_dashboard"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_invalidCredential",
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_loginPage"
+                },
+                {
+                    "id": "e4",
+                    "name": "e_logout",
+                    "sourceVertexId": "v_dashboard",
+                    "targetVertexId": "v_loginPage"
+                }                 
+            ]
+        }
+    ]
+}

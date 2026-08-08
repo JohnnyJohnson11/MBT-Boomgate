@@ -1,0 +1,126 @@
+{
+    "models": [
+        {
+            "name": "TamuCRUD",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_dashboard", "name": "v_dashboard", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_tamuPage", "name": "v_tamuPage", "properties": { "x": 100, "y": 500 } },
+                { "id": "v_createTamuDialog", "name": "v_createTamuDialog", "properties": { "x": -100, "y": 700 } },
+                { "id": "v_editTamuDialog", "name": "v_editTamuDialog", "properties": { "x": 300, "y": 700 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_openTamuPageAdmin",
+                    "guard": "current_role == 'admin' ",
+                    "sourceVertexId": "v_dashboard",
+                    "targetVertexId": "v_tamuPage"
+                },
+                {
+                    "id": "e2",
+                    "name": "e_openTamuPageSatpam",
+                    "guard": "current_role == 'satpam' ",
+                    "sourceVertexId": "v_dashboard",
+                    "targetVertexId": "v_tamuPage"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_loginAdmin",
+                    "actions": [
+                        "current_role = 'admin'"
+                    ],
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_dashboard"
+                },
+                {
+                    "id": "e4",
+                    "name": "e_loginSatpam",
+                    "actions": [
+                        "current_role = 'satpam'"
+                    ],
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_dashboard"
+                },
+                {
+                    "id": "e5",
+                    "name": "e_openCreateDialogAdmin",
+                    "guard": "current_role == 'admin' ",
+                    "sourceVertexId": "v_tamuPage",
+                    "targetVertexId": "v_createTamuDialog"
+                },
+                {
+                    "id": "e6",
+                    "name": "e_createTamuAdmin",
+                    "guard": "current_role == 'admin' ",
+                    "sourceVertexId": "v_createTamuDialog",
+                    "targetVertexId": "v_tamuPage"
+                },   
+                {
+                    "id": "e7",
+                    "name": "e_openEditDialogAdmin",
+                    "guard": "current_role == 'admin' ",
+                    "sourceVertexId": "v_tamuPage",
+                    "targetVertexId": "v_editTamuDialog"
+                },
+                {
+                    "id": "e8",
+                    "name": "e_editTamuAdmin",
+                    "guard": "current_role == 'admin' ",
+                    "sourceVertexId": "v_editTamuDialog",
+                    "targetVertexId": "v_tamuPage"
+                },
+                {
+                    "id": "e9",
+                    "name": "e_deleteTamuAdmin",
+                    "guard": "current_role == 'admin' ",
+                    "sourceVertexId": "v_tamuPage",
+                    "targetVertexId": "v_tamuPage"
+                },
+                {
+                    "id": "e10",
+                    "name": "e_openCreateDialogSatpam",
+                    "guard": "current_role == 'satpam' ",
+                    "sourceVertexId": "v_tamuPage",
+                    "targetVertexId": "v_createTamuDialog"
+                },
+                {
+                    "id": "e11",
+                    "name": "e_createTamuSatpam",
+                    "guard": "current_role == 'satpam' ",
+                    "sourceVertexId": "v_createTamuDialog",
+                    "targetVertexId": "v_tamuPage"
+                },   
+                {
+                    "id": "e12",
+                    "name": "e_openEditDialogSatpam",
+                    "guard": "current_role == 'satpam' ",
+                    "sourceVertexId": "v_tamuPage",
+                    "targetVertexId": "v_editTamuDialog"
+                },
+                {
+                    "id": "e13",
+                    "name": "e_editTamuSatpam",
+                    "guard": "current_role == 'satpam' ",
+                    "sourceVertexId": "v_editTamuDialog",
+                    "targetVertexId": "v_tamuPage"
+                },
+                {
+                    "id": "e14",
+                    "name": "e_deleteTamuSatpam",
+                    "guard": "current_role == 'satpam' ",
+                    "sourceVertexId": "v_tamuPage",
+                    "targetVertexId": "v_tamuPage"
+                },
+                {
+                    "id": "e15",
+                    "name": "e_logout",
+                    "sourceVertexId": "v_tamuPage",
+                    "targetVertexId": "v_loginPage"
+                }
+            ]
+        }
+    ]
+}

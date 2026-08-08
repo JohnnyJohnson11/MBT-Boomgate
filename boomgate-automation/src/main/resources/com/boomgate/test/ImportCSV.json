@@ -1,0 +1,34 @@
+{
+    "models": [
+        {
+            "name": "WargaCRUD",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_adminDashboard", "name": "v_adminDashboard", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_wargaPage", "name": "v_wargaPage", "properties": { "x": 500, "y": 100 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_loginAdmin",
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_adminDashboard"
+                },
+                {
+                    "id": "e2",
+                    "name": "e_openWargaPage",
+                    "sourceVertexId": "v_adminDashboard",
+                    "targetVertexId": "v_wargaPage"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_uploadCSV",
+                    "sourceVertexId": "v_wargaPage",
+                    "targetVertexId": "v_wargaPage"
+                }
+            ]
+        }
+    ]
+}

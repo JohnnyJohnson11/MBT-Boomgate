@@ -1,0 +1,91 @@
+{
+    "models": [
+        {
+            "name": "WargaCRUDModel",
+            "id": "m1",
+            "startElementId": "v_loginPage",
+            "vertices": [
+                { "id": "v_loginPage", "name": "v_loginPage", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_dashboard", "name": "v_dashboard", "properties": { "x": 100, "y": 100 } }, 
+                { "id": "v_wargaPage", "name": "v_wargaPage", "properties": { "x": 500, "y": 100 } }, 
+                { "id": "v_createWargaDialog", "name": "v_createWargaDialog", "properties": { "x": -100, "y": 700 } },
+                { "id": "v_editWargaDialog", "name": "v_editWargaDialog", "properties": { "x": 300, "y": 700 } }
+            ],
+            "edges": [
+                {
+                    "id": "e1",
+                    "name": "e_loginSatpam",
+                    "actions": [
+                        "current_role = 'satpam'"
+                    ],
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_dashboard"
+                },
+                {
+                    "id": "e2",
+                    "name": "e_loginAdmin",
+                    "actions": [
+                        "current_role = 'admin'"
+                    ],
+                    "sourceVertexId": "v_loginPage",
+                    "targetVertexId": "v_dashboard"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_logout",
+                    "sourceVertexId": "v_wargaPage",
+                    "targetVertexId": "v_loginPage"
+                },
+                {
+                    "id": "e4",
+                    "name": "e_openWargaPageAsSatpam",
+                    "guard": "current_role == 'satpam' ", 
+                    "sourceVertexId": "v_dashboard",
+                    "targetVertexId": "v_wargaPage"
+                },
+                {
+                    "id": "e5",
+                    "name": "e_openWargaPageAsAdmin",
+                    "guard": "current_role == 'admin' ", 
+                    "sourceVertexId": "v_dashboard",
+                    "targetVertexId": "v_wargaPage"
+                },
+                {
+                    "id": "e6",
+                    "name": "e_openCreateDialog",
+                    "guard": "current_role == 'admin' ", 
+                    "sourceVertexId": "v_wargaPage",
+                    "targetVertexId": "v_createWargaDialog"
+                },
+                {
+                    "id": "e7",
+                    "name": "e_openEditDialog",
+                    "guard": "current_role == 'admin' ", 
+                    "sourceVertexId": "v_wargaPage",
+                    "targetVertexId": "v_editWargaDialog"
+                },
+                {
+                    "id": "e8",
+                    "name": "e_createWarga",
+                    "guard": "current_role == 'admin' ", 
+                    "sourceVertexId": "v_createWargaDialog",
+                    "targetVertexId": "v_wargaPage"
+                },
+                {
+                    "id": "e9",
+                    "name": "e_editWarga",
+                    "guard": "current_role == 'admin' ", 
+                    "sourceVertexId": "v_editWargaDialog",
+                    "targetVertexId": "v_wargaPage"
+                },
+                {
+                    "id": "e10",
+                    "name": "e_deleteWarga",
+                    "guard": "current_role == 'admin' ", 
+                    "sourceVertexId": "v_wargaPage",
+                    "targetVertexId": "v_wargaPage"
+                }
+            ]
+        }
+    ]
+}
