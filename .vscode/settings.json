@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "jSerialComm-2.11.4.jar"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic",
+}
